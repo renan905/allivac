@@ -1,0 +1,87 @@
+.Text-Field {
+	background-color: #f5f5f5f1;
+	border-radius: 4px;
+}
+
+.NewExame {
+	display: flex;
+	background-color: #1f1d2c;
+	border-radius: 0 20px 20px 0;
+
+	height: 750px;
+
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+	margin-left: 3%;
+	margin-right: 3%;
+
+	.Consulta-Coletas {
+		width: 75%;
+		padding: 20px;
+		background-color: #313346;
+
+		/* top-left | top-right | bottom-right | bottom-left */
+		border-radius: 0 20px 20px 0;
+	
+
+		.Sintomas-Item {
+			display: flex;
+			gap: 10px;
+		}
+
+		.Tratamento {
+			display: flex;
+			gap: 20px;
+		}
+
+		.ActionButtons {
+			margin-right: 25px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.Informacoes-Paciente {
+		width: 25%;
+		padding: 20px;
+		background-color: #6b5ecd;
+
+		/* top-left | top-right | bottom-right | bottom-left */
+		border-radius: 20px 0 0 20px;
+	}
+
+	.Atestado {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		.Atestado-Botoes {
+			display: flex;
+			justify-content: space-between;
+			gap: 10px;
+		}
+	}
+
+	.Anexos-Titulos {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+
+		.Button {
+			height: 25px;
+		}
+	}
+
+	.Anexos {
+		display: inline-block;
+
+		.Anexos-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin-right: 10px;
+			padding: 5px;
+		}
+	}
+}
