@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { AttachFile, PictureAsPdf, AccountCircle } from "@material-ui/icons";
-import { Paper, TextField, Button, InputAdornment } from "@mui/material";
-
-import "./NewExame.css";
+import { AttachFile, PictureAsPdf, Create } from "@material-ui/icons";
+import { Paper, TextField, Button } from "@mui/material";
 import { Box } from "@mui/system";
 
+import "./NewExame.css";
+
 import userDataMock from "../Mock/UserMock";
+
 import {
 	filesExameAttachmentMock,
 	atestadoExameAttachmentMock,
@@ -25,7 +26,7 @@ const NewExame = () => {
 		setFiles(filesExameAttachmentMock);
 
 		setDateTime({
-			time: currentDate.getHours() + ":" + currentDate.getMinutes(),
+			time: currentDate.getHours() + ":" + (currentDate.getMinutes() < 10 ? "0" + currentDate.getMinutes() : currentDate.getMinutes() ),
 			date:
 				currentDate.getDate() +
 				"/" +
@@ -38,11 +39,11 @@ const NewExame = () => {
 	return (
 		<Paper className="NewExame" elevation={3}>
 			<Box className="Informacoes-Paciente">
-				<p>Paciente: {userData.nome}</p>
-				<p>Sexo: {userData.sexo}</p>
-				<p>Nascimento: {userData.nascimento}</p>
-				<p>Data: {dateTime.date} </p>
-				<p>Horario: {dateTime.time} </p>
+				<p><b>Paciente:</b> {userData.nome}</p>
+				<p><b>Sexo:</b> {userData.sexo}</p>
+				<p><b>Nascimento:</b> {userData.nascimento}</p>
+				<p><b>Data:</b> {dateTime.date} <Create fontSize="inherit" /></p>
+				<p><b>Horario:</b> {dateTime.time} <Create fontSize="inherit" /></p>
 
 				<h1>Novo Atestado</h1>
 				<div className="Atestado">
@@ -51,6 +52,7 @@ const NewExame = () => {
 						label="DATA/HORA"
 						type="datetime-local"
 						defaultValue="2017-05-24T10:30"
+						color="bg"
 						sx={{ width: 250 }}
 						InputLabelProps={{
 							shrink: true,
@@ -58,8 +60,8 @@ const NewExame = () => {
 					/>
 					<TextField
 						className="Text-Field"
-						id="filled-basic"
-						label="Descrição"
+						id="filled"
+						label="Descrição do Atestado"
 						variant="filled"
 					/>
 
@@ -141,6 +143,13 @@ const NewExame = () => {
 						label="Frequencia"
 						variant="filled"
 					/>
+
+					<TextField
+						className="Text-Field"
+						id="filled-basic"
+						label="Duração"
+						variant="filled"
+					/>
 				</div>
 
 				<h1>Descrição</h1>
@@ -148,7 +157,7 @@ const NewExame = () => {
 					<TextField
 						className="Text-Field"
 						id="filled-basic"
-						label="Frequencia"
+						label="Descrição"
 						variant="filled"
 						color="roxo"
 					/>

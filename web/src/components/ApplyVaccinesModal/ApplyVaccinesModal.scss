@@ -1,0 +1,15 @@
+.ApplyVaccinesModal {
+	position: "absolute";
+	top: "50%";
+	left: "50%";
+
+	width: 500px;
+	height: 500px;
+
+	.Vaccine-box {
+		display: flex;
+		flex-direction: column;
+		margin: 20px;
+		gap: 20px;
+	}
+}

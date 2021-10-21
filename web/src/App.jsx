@@ -8,22 +8,25 @@ const theme = createTheme({
 	palette: {
 		primary: {
 			main: "#0B9FF1",
-			
 		},
 		secondary: {
 			main: "#0B9FF1",
 		},
 		text: {
 			primary: "#FFFFFF",
+			text: "#000000",
+		},
+		bg: {
+			primary: "#F5F5F5",
 		},
 		roxo: {
-			main: "#6B5ECD"
+			main: "#6B5ECD",
 		},
 		verde: {
-			main: "#23AF7E"
+			main: "#23AF7E",
 		},
-		vermelho:{
-			main: "#EA5F5E"
+		vermelho: {
+			main: "#EA5F5E",
 		},
 		contrastThreshold: 3,
 		tonalOffset: 0.2,
@@ -34,6 +37,7 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<Navbar />
+
 			<NewExame />
 		</ThemeProvider>
 	);

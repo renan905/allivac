@@ -1,4 +1,27 @@
 .Navbar {
 	height: 100px;
-	background-color: #6B5ECD;
+	background-color: #6b5ecd;
+
+	.menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px;
+		gap: 15px;
+		color: #F5F5F5;
+
+		.left{
+			margin-left: 20px;
+		}
+	
+		.right {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+			margin-right: 20px;
+			
+		}
+	}
+
+
 }
