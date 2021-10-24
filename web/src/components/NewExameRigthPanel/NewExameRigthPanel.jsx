@@ -4,15 +4,6 @@ import { Box } from "@mui/system";
 
 import "./NewExameRigthPanel.css";
 
-const textFieldStyle = {
-	sx: { color: "roxo.main", accentColor: "roxo.main" },
-	style: {
-		color: "roxo.main",
-		fontWeight: "bold",
-		outlineColor: "roxo.main",
-	},
-};
-
 const NewExameRigthPanel = () => {
 	useEffect(() => {}, []);
 

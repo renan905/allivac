@@ -4,6 +4,7 @@ import { Box, ListItem, List, Toolbar } from "@mui/material";
 import ListItemText from "@mui/material/ListItemText";
 
 import "./DrawerMenu.css";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 const MenuItens = ["Vacinar", "Nova Consulta"];
@@ -28,20 +29,35 @@ const DrawerMenu = () => {
 			<Toolbar />
 			<Box sx={{ overflow: "auto", color: "text.primary" }}>
 				<List className="MenuItensList">
-					{MenuItens.map((text) => (
+					<Link to="/vacinar">
 						<ListItem
 							className="MenuItensListBox"
 							button
 							divider
-							key={text}
+							key={MenuItens[0]}
 						>
 							<ListItemText
 								className="MenuItensListBoxText"
 								sx={{ color: "text.primary" }}
-								primary={text}
+								primary={MenuItens[0]}
 							/>
 						</ListItem>
-					))}
+					</Link>
+
+					<Link to="/exame">
+						<ListItem
+							className="MenuItensListBox"
+							button
+							divider
+							key={MenuItens[1]}
+						>
+							<ListItemText
+								className="MenuItensListBoxText"
+								sx={{ color: "text.primary" }}
+								primary={MenuItens[1]}
+							/>
+						</ListItem>
+					</Link>
 				</List>
 			</Box>
 		</Drawer>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACJ,OAAO,EAAE,IAAI;CACb",
+    "sources": [
+        "VaccinesListModal.scss"
+    ],
+    "names": [],
+    "file": "VaccinesListModal.css"
+}
