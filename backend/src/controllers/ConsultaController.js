@@ -5,7 +5,7 @@ module.exports = {
     async index(request, response){
         const {id} = request.params;
 
-        const consulta = await connection('Consulta').where('id',id);
+        const consulta = await connection('Consulta').where('Consulta.id',id).join('Symptoms', "Consulta.id", "Symptoms.id_consulta");
         return response.json(consulta);
     },
     async create(request, response) {
