@@ -5,6 +5,8 @@ const PacientController = require('./controllers/PacientController')
 const ProfessionalController = require('./controllers/ProfessionalController')
 const ConsultaController = require('./controllers/ConsultaController')
 const SymptomsController = require('./controllers/SymptomsController')
+const ExamRequestController = require('./controllers/ExamRequestController')
+const DrugController = require('./controllers/DrugController');
 
 routes.get('/pacient', PacientController.index);
 routes.post('/pacient', PacientController.create);
@@ -16,14 +18,24 @@ routes.post('/professional', ProfessionalController.create);
 routes.delete('/professional/:id', ProfessionalController.delete);
 routes.put('/professional/:id', ProfessionalController.edit);
 
-routes.get('/consulta/:id', ConsultaController.index);
+routes.get('/consulta', ConsultaController.index);
 routes.post('/consulta', ConsultaController.create);
 routes.delete('/consulta/:id', ConsultaController.delete);
 routes.put('/consulta/:id', ConsultaController.edit);
 
-routes.get('/Symptoms', SymptomsController.index);
+routes.get('/Symptoms/:id_consulta', SymptomsController.index);
 routes.post('/Symptoms', SymptomsController.create);
 routes.delete('/Symptoms/:id', SymptomsController.delete);
 routes.put('/Symptoms/:id', SymptomsController.edit);
+
+routes.get('/examRequest/:id_consulta', ExamRequestController.index);
+routes.post('/examRequest', ExamRequestController.create);
+routes.delete('/examRequest/:id', ExamRequestController.delete);
+routes.put('/examRequest/:id', ExamRequestController.edit);
+
+routes.get('/drug', DrugController.index);
+routes.post('/drug', DrugController.create);
+routes.delete('/drug/:id', DrugController.delete);
+routes.put('/drug/:id', DrugController.edit);
 
 module.exports = routes;

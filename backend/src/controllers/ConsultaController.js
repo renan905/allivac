@@ -3,9 +3,7 @@ const crypto = require("crypto");
 
 module.exports = {
     async index(request, response){
-        const {id} = request.params;
-
-        const consulta = await connection('Consulta').where('Consulta.id',id).join('Symptoms', "Consulta.id", "Symptoms.id_consulta");
+        const consulta = await connection('Consulta')
         return response.json(consulta);
     },
     async create(request, response) {
