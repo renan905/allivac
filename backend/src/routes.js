@@ -8,6 +8,7 @@ const SymptomsController = require('./controllers/SymptomsController')
 const ExamRequestController = require('./controllers/ExamRequestController')
 const DrugController = require('./controllers/DrugController')
 const TreatmentController = require('./controllers/TreatmentController')
+const VaccineController = require('./controllers/VaccineController')
 
 routes.get('/pacient', PacientController.index);
 routes.post('/pacient', PacientController.create);
@@ -43,5 +44,10 @@ routes.get('/treatment/:id_consulta', TreatmentController.index);
 routes.post('/treatment', TreatmentController.create);
 routes.delete('/treatment/:id', TreatmentController.delete);
 routes.put('/treatment/:id', TreatmentController.edit);
+
+routes.get('/vaccine', VaccineController.index);
+routes.post('/vaccine', VaccineController.create);
+routes.delete('/vaccine/:id', VaccineController.delete);
+routes.put('/vaccine/:id', VaccineController.edit);
 
 module.exports = routes;
