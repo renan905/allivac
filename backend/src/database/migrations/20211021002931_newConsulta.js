@@ -8,6 +8,6 @@ exports.up = function(knex) {
   };
   
   exports.down = function(knex) {
-    return knex.schema.dropTable('Consultas')
+    return knex.schema.dropTable('Consulta')
   };
   
