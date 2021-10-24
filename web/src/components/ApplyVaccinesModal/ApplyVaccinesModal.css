@@ -1,12 +1,17 @@
-.ApplyVaccinesModal {
-  position: "absolute";
-  top: "50%";
-  left: "50%";
-  width: 500px;
-  height: 500px;
+.ApplyVaccineBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.ApplyVaccinesModal .Vaccine-box {
+.ApplyVaccineBox .Vaccine-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

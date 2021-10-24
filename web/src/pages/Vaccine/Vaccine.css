@@ -7,11 +7,8 @@
       -ms-flex-direction: column;
           flex-direction: column;
   height: 750px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: 3%;
-  margin-right: 3%;
-  background-color: #1f1d2c;
+  margin-top: 100px;
+  margin-left: 20px;
   border-radius: 0 20px 20px 0;
 }
 
@@ -28,9 +25,5 @@
 
 .Vaccine .Menu .Search {
   height: 40px;
-}
-
-.Vaccine .ListVaccines {
-  width: 90%;
 }
 /*# sourceMappingURL=Vaccine.css.map */

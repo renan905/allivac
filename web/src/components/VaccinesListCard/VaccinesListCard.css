@@ -1,0 +1,34 @@
+.VaccineCard {
+  text-align: left;
+  padding-left: 15px;
+  border-radius: 0 20px 20px 0;
+}
+
+.VaccineCard .VaccineCard-Vaccine {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  -webkit-font-feature-settings: "cpsp" on;
+          font-feature-settings: "cpsp" on;
+  color: #313346;
+  margin-bottom: -10px;
+}
+
+.VaccineCard .VaccineCard-Date {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+.VaccineCard .ListVaccines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=VaccinesListCard.css.map */

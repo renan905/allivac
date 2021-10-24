@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Paper, TextField, Grid, Typography, Modal, Box } from "@mui/material";
 
+import DrawerMenu from "../../components/Drawer/DrawerMenu";
 import Navbar from "../../components/Navbar/Navbar";
-import "./Vaccine.css";
-
 import ApplyVaccines from "../../components/ApplyVaccinesModal/ApplyVaccinesModal";
 
-import { VaccinesMock } from "../../components/Mock/VaccinesMock";
+import { VaccinesMock } from "../../Mock/VaccinesMock";
 import { AntSwitch } from "../../components/AntSwitch/AntSwitch";
+import VaccinesList from "../../components/VaccinesListCard/VaccinesListCard";
+
+import "./Vaccine.css";
 
 const style = {
 	position: "absolute",
@@ -29,71 +31,68 @@ const Vaccine = () => {
 	}, []);
 
 	return (
-		<>
+		<Box sx={{ display: "flex" }}>
 			<Navbar />
-			<Paper className="Vaccine" elevation={3}>
-				<Grid container>
-					<Grid item xs={12}>
-						<Grid className="Menu" container>
-							<Grid item xs={6}>
-								<h1>VACINAS</h1>
-							</Grid>
-							<Grid item xs={4}>
-								<TextField
-									label="Standard warning"
-									variant="standard"
-									color="warning"
-									focused
+			<DrawerMenu />
+
+			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+				<Paper
+					className="Vaccine"
+					elevation={3}
+					sx={{ bgcolor: "bg.caixa", padding: "20px" }}
+				>
+					<Grid container>
+						<Grid item xs={12}>
+							<Grid className="Menu" container>
+								<Grid item xs={6}>
+									<h1>VACINAS</h1>
+								</Grid>
+
+								<Grid item xs={4}>
+									<TextField
+										label="buscar por nome ou data"
+										variant="standard"
+										InputProps={{
+											sx: { color: "text." },
+										}}
+										InputLabelProps={{
+											sx: { color: "roxo.main", accentColor: "roxo.main" },
+											style: {
+												color: "roxo.main",
+												fontWeight: "bold",
+												outlineColor: "roxo.main",
+											},
+										}}
+									/>
+								</Grid>
+
+								<Typography>Aplicada</Typography>
+
+								<AntSwitch
+									defaultChecked
+									inputProps={{ "aria-label": "ant design" }}
 								/>
+
+								<Typography>Não Aplicada</Typography>
 							</Grid>
-							<Typography>Aplicada</Typography>
-							<AntSwitch
-								defaultChecked
-								inputProps={{ "aria-label": "ant design" }}
-							/>
-							<Typography>Não Aplicada</Typography>
 						</Grid>
-					</Grid>
 
-					<Grid item xs={12}>
-						<Grid
-							container
-							spacing={2}
-							direction="row"
-							justifyContent="flex-start"
-							alignItems="center"
-							className="ListVaccines"
-						>
-							{vaccines &&
-								vaccines.map((item) => (
-									<Grid item xs={4}>
-										<Paper
-											className=""
-											onClick={handleOpen}
-										>
-											<div className="">
-												<p>Vacina: {item.name}</p>
-												<p>Data: {item.date}</p>
-											</div>
-										</Paper>
-									</Grid>
-								))}
-						</Grid>
+						<VaccinesList />
 					</Grid>
-				</Grid>
-			</Paper>
+				</Paper>
 
-			<Modal
-				open={applyNew}
-				onClose={handleClose}
-				aria-labelledby="modal-modal-title"
-				aria-describedby="modal-modal-description"
-			>
-				<Box sx={style}>
-					<ApplyVaccines />
-				</Box>
-			</Modal>
-		</>
+				<Modal
+					open={applyNew}
+					onClose={handleClose}
+					aria-labelledby="modal-modal-title"
+					aria-describedby="modal-modal-description"
+				>
+					<Box sx={style}>
+						<ApplyVaccines />
+					</Box>
+				</Modal>
+			</Box>
+		</Box>
 	);
 };
 
