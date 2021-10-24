@@ -43,7 +43,6 @@ module.exports = {
         return response.json("deletado com sucesso");
     },
     async edit(request, response){
-        console.log(1234)
         
         const {id} = request.params
         const professional = await connection('Professional').where('id', id).first();

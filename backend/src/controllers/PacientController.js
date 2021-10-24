@@ -9,8 +9,6 @@ module.exports = {
         return response.json(pacients);
     },
     async create(request, response) {
-        console.log(request.body);
-        return response.json(1);
         const { nome, email, senha, cpf, telefone, nascimento, sexo } = request.body;
         if (nome == undefined) return response.status(400).json("Nome é um campo obrigatorio");
         
@@ -34,7 +32,6 @@ module.exports = {
             nascimento,
             sexo
         }
-        console.log(pacient);
         await connection('Pacient').insert(pacient);
         return response.json(id);
     },
