@@ -1,0 +1,17 @@
+.MenuDrawerContainer {
+  margin-top: 100px;
+}
+
+.MenuDrawerContainer .MenuItensList {
+  color: black;
+}
+
+.MenuDrawerContainer .MenuItensList .MenuItensListBox {
+  height: 100px;
+}
+
+.MenuDrawerContainer .MenuItensList .MenuItensListBoxText {
+  font-weight: bold;
+  text-align: center;
+}
+/*# sourceMappingURL=DrawerMenu.css.map */

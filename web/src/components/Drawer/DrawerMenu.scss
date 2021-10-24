@@ -1,0 +1,16 @@
+.MenuDrawerContainer {
+	margin-top: 100px;
+
+	.MenuItensList {
+		color: black;
+
+		.MenuItensListBox {
+			height: 100px;
+		}
+
+		.MenuItensListBoxText {
+			font-weight: bold;
+			text-align: center;
+		}
+	}
+}

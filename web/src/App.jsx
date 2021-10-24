@@ -1,44 +1,25 @@
 import "./App.css";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import Box from "@mui/material/Box";
 
 import Navbar from "./components/Navbar/Navbar";
-import NewExame from "./components/NewExame/NewExame";
+import NewExame from "./pages/NewExame/NewExame";
+import DrawerMenu from "./components/Drawer/DrawerMenu";
 
-const theme = createTheme({
-	palette: {
-		primary: {
-			main: "#0B9FF1",
-		},
-		secondary: {
-			main: "#0B9FF1",
-		},
-		text: {
-			primary: "#FFFFFF",
-			text: "#000000",
-		},
-		bg: {
-			primary: "#F5F5F5",
-		},
-		roxo: {
-			main: "#6B5ECD",
-		},
-		verde: {
-			main: "#23AF7E",
-		},
-		vermelho: {
-			main: "#EA5F5E",
-		},
-		contrastThreshold: 3,
-		tonalOffset: 0.2,
-	},
-});
+import AppTheme from "./theme/AppTheme";
 
 const App = () => {
 	return (
-		<ThemeProvider theme={theme}>
-			<Navbar />
+		<ThemeProvider theme={AppTheme}>
+			<Box sx={{ display: "flex" }}>
+				<Navbar />
 
-			<NewExame />
+				<DrawerMenu />
+
+				<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+					<NewExame />
+				</Box>
+			</Box>
 		</ThemeProvider>
 	);
 };
