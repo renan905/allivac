@@ -6,7 +6,8 @@ const ProfessionalController = require('./controllers/ProfessionalController')
 const ConsultaController = require('./controllers/ConsultaController')
 const SymptomsController = require('./controllers/SymptomsController')
 const ExamRequestController = require('./controllers/ExamRequestController')
-const DrugController = require('./controllers/DrugController');
+const DrugController = require('./controllers/DrugController')
+const TreatmentController = require('./controllers/TreatmentController')
 
 routes.get('/pacient', PacientController.index);
 routes.post('/pacient', PacientController.create);
@@ -37,5 +38,10 @@ routes.get('/drug', DrugController.index);
 routes.post('/drug', DrugController.create);
 routes.delete('/drug/:id', DrugController.delete);
 routes.put('/drug/:id', DrugController.edit);
+
+routes.get('/treatment/:id_consulta', TreatmentController.index);
+routes.post('/treatment', TreatmentController.create);
+routes.delete('/treatment/:id', TreatmentController.delete);
+routes.put('/treatment/:id', TreatmentController.edit);
 
 module.exports = routes;
